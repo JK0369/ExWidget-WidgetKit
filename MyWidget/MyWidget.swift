@@ -50,10 +50,23 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct MyWidgetEntryView : View {
+  @Environment(\.widgetFamily) var family: WidgetFamily
   var entry: Provider.Entry
-  
+
+  @ViewBuilder
   var body: some View {
-    Text(entry.date, style: .time)
+    switch self.family {
+    case .systemSmall:
+      Text(".systemSmall")
+    case .systemMedium:
+      Text(".systemMedium")
+    case .systemLarge:
+      Text(".systemLarge")
+    case .systemExtraLarge:
+      Text(".systemExtraLarge")
+    @unknown default:
+      Text("default")
+    }
   }
 }
 
