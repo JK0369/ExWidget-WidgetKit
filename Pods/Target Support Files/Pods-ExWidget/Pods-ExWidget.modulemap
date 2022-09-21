@@ -1,0 +1,6 @@
+framework module Pods_ExWidget {
+  umbrella header "Pods-ExWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}
